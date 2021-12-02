@@ -8,6 +8,7 @@
 -  axios
 -  node-fetch
 -  express
+-  cors
 
 ## Підходи та способи вирішення завдання
 
