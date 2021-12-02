@@ -89,7 +89,7 @@ module.exports = {
 		// custom text for edit link. Defaults to "Edit this page"
 		// editLinkText: 'Ви можете покращити цю сторінку'
 	},
-	title: "Назва проєкту",
+	title: "Розробка RESTful сервісу на Node",
 	description: 'Лабораторні роботи з дисципліни "Розподілені інформаційні системи"',
 	configureWebpack: {
 		resolve: {
