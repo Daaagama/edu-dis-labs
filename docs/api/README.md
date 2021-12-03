@@ -2,8 +2,10 @@
 title: RESTfull service API v0.1
 language_tabs:
   - http: HTTP
+  - javascript: JavaScript
 language_clients:
-  - http: ""
+  - shell: curl
+  - javascript: axios
 toc_footers:
   - <a
     href="https://boldak.github.io/dis-edu/swagger/12.api.html#openapi-swagger">See
@@ -37,10 +39,26 @@ License: <a href="https://gvbilokorenko.github.io/edu-dis-labs/license.html">ECL
 > Code samples
 
 ```http
-GET http://localhost:8000/catalog HTTP/1.1
-Host: localhost:8000
+GET /catalog HTTP/1.1
 Accept: application/json
+Host: localhost:8000
 
+```
+
+```javascript
+import axios from "axios";
+
+const options = {
+  method: 'GET',
+  url: 'http://localhost:8000/catalog',
+  headers: {Accept: 'application/json'}
+};
+
+axios.request(options).then(function (response) {
+  console.log(response.data);
+}).catch(function (error) {
+  console.error(error);
+});
 ```
 
 `GET /catalog`
@@ -87,10 +105,26 @@ This operation does not require authentication
 > Code samples
 
 ```http
-GET http://localhost:8000/catalog/{id} HTTP/1.1
-Host: localhost:8000
+GET /catalog/0 HTTP/1.1
 Accept: application/json
+Host: localhost:8000
 
+```
+
+```javascript
+import axios from "axios";
+
+const options = {
+  method: 'GET',
+  url: 'http://localhost:8000/catalog/0',
+  headers: {Accept: 'application/json'}
+};
+
+axios.request(options).then(function (response) {
+  console.log(response.data);
+}).catch(function (error) {
+  console.error(error);
+});
 ```
 
 `GET /catalog/{id}`
@@ -135,11 +169,30 @@ This operation does not require authentication
 > Code samples
 
 ```http
-POST http://localhost:8000/catalog/post HTTP/1.1
-Host: localhost:8000
+POST /catalog/post HTTP/1.1
 Content-Type: application/json
 Accept: text/plain; charset=utf-8
+Host: localhost:8000
+Content-Length: 2
 
+{}
+```
+
+```javascript
+import axios from "axios";
+
+const options = {
+  method: 'POST',
+  url: 'http://localhost:8000/catalog/post',
+  headers: {'Content-Type': 'application/json', Accept: 'text/plain; charset=utf-8'},
+  data: {}
+};
+
+axios.request(options).then(function (response) {
+  console.log(response.data);
+}).catch(function (error) {
+  console.error(error);
+});
 ```
 
 `POST /catalog/post`
